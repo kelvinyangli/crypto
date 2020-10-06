@@ -12,5 +12,5 @@ gcd(a, b)
 \item{b}{An integer.}
 }
 \description{
-This function uses Euclidean algorithm to find the gcd of two integers.
+This function uses the Euclidean algorithm to find the gcd of two integers.
 }

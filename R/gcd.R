@@ -1,7 +1,7 @@
 #
 #' Greatest common divisor
 #'
-#' This function uses Euclidean algorithm to find the gcd of two integers.
+#' This function uses the Euclidean algorithm to find the gcd of two integers.
 #' @param a An integer.
 #' @param b An integer.
 #' @export

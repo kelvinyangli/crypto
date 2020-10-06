@@ -16,13 +16,13 @@ modular_exponentiation_binary = function(b, e, m) {
   n = length(eBin)
 
   aPrevious = b %% m
-  p = aPrevious ^ eBin[1] %% m
+  p = (aPrevious ^ eBin[1]) %% m
 
   if (n > 1) {
 
     for (i in 2:n) {
 
-      aCurrent = aPrevious ^ 2 %% m
+      aCurrent = (aPrevious ^ 2) %% m
       aPrevious = aCurrent
       p = (p * (aCurrent ^ eBin[i])) %% m
 
