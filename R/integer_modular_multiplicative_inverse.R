@@ -3,12 +3,13 @@
 #'
 #' This function uses the exteneded Euclidean algorithm to find the
 #' inverse of an integer a modulo p. The inverse only exists if a and
-#' p are coprime. That is, F_p is a field.
+#' p are coprime. If F_p is a field, then all none zero elements in it
+#' has multiplicative inverse.
 #' @param a An integer that is less than p and coprime with p.
 #' @param p An integer that is coprime with a.
 #' @export
 
-field_multiplicative_inverse = function(a, p) {
+integer_modular_multiplicative_inverse = function(a, p) {
 
   if (!coprime(a, p)) stop("a and p are not coprime! No multiplicative inverse exists!")
 

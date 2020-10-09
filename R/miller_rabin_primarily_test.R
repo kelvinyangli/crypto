@@ -7,7 +7,7 @@
 #' @param a Another integer, called a Miller-Rabin witness for the compositeness of n.
 #' @export
 
-miller_rabin = function(n, a) {
+miller_rabin_primarily_test = function(n, a) {
 
   if ((n %% 2 == 0) || !coprime(a, n)) {
 
