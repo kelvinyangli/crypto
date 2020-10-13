@@ -4,11 +4,18 @@
 \alias{fft}
 \title{Fast Fourier Transform}
 \usage{
-fft(a)
+fft(a, inverse = FALSE)
 }
 \arguments{
 \item{a}{A vector of polynomial coefficients from the smallest to the
-highest power. That is, a=(a_0,a_1, ..., a_n-1).}
+highest power (or samples when inverser is set to TRUE).
+That is, a=(a_0,a_1, ..., a_n-1). Ideally, the length
+of a is a power of 2. If not, it will be packed with 0s at the back
+to make it so. Hence, the output will be a vector of length n that
+is a power of 2.}
+
+\item{inverse}{A logical parameter. The default is FALSE. When set
+to TRUE, the function will calculate the inverse of FFT.}
 }
 \description{
 Fast Fourier Transform (FFT) that gets sample representation of

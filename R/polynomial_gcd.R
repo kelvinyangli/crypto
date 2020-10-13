@@ -12,7 +12,11 @@
 #' division to fail.
 #' @export
 
-polynomial_gcd = function(a, b) {
+polynomial_gcd = function(a, b, p) {
+
+  # omit 0s at the back to avoid issues
+  a = omit_zero(a)
+  b = omit_zero(b)
 
   # ensure polynomial coefficients are in Z/pZ
   a = a %% p

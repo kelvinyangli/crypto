@@ -23,6 +23,13 @@ polynomial_long_division = function(a, b, p = NULL) {
 
   da = polynomial_degree(a)
   db = polynomial_degree(b)
+
+  if (db > da) stop("The a is smaller than b!")
+
+  # omit 0s at the back to avoid issues
+  a = omit_zero(a)
+  b = omit_zero(b)
+
   if (length(b) < length(a)) b = c(b, rep(0, length(a) - length(b)))
 
   q = rep(0, da + 1)
@@ -41,6 +48,7 @@ polynomial_long_division = function(a, b, p = NULL) {
   while ((sum(r) != 0) && (dr >= db)) {
 
     t = rep(0, da + 1)
+    rLeadingTerm = r[dr + 1]
     # if p is not null and the leading term of the remainder is NOT
     # divisible by the leading term of b then...
     if (!is.null(p) && !is_divisible(rLeadingTerm, bLeadingTerm)) {
@@ -72,7 +80,6 @@ polynomial_long_division = function(a, b, p = NULL) {
     }
 
     dr = polynomial_degree(r)
-    rLeadingTerm = r[dr + 1]
 
   } # end while
 
