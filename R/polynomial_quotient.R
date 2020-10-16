@@ -9,22 +9,31 @@
 #' degree at most N - 1.
 #' @export
 #
-polynomial_modulo = function(a, N) {
-
+polynomial_quotient = function(a, N) {
 
   na = length(a)
-  k = ceiling(na / N)
-  # fill a with 0s at the back to make the length of a
-  # a multiple of N
-  if (na < k * N) a = c(a, rep(0, k * N - na))
+  da = polynomial_degree(a)
+  if (da < N) {
 
-  b = a[1:N]
-  for (i in 1:(k - 1)) {
+    b = a
 
-    b = b + a[(1:N) + i * N]
+  } else {
+
+    k = ceiling(na / N)
+    # fill a with 0s at the back to make the length of a
+    # a multiple of N
+    if (na < k * N) a = c(a, rep(0, k * N - na))
+
+    b = a[1:N]
+    for (i in 1:(k - 1)) {
+
+      b = b + a[(1:N) + i * N]
+
+    }
 
   }
 
+  b = omit_zero(b)
   return(b)
 
 }

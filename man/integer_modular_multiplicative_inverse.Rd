@@ -7,9 +7,9 @@
 integer_modular_multiplicative_inverse(a, p)
 }
 \arguments{
-\item{a}{An integer that is less than p and coprime with p.}
+\item{a}{A positive integer that is less than p.}
 
-\item{p}{An integer that is coprime with a.}
+\item{p}{A positive integer.}
 }
 \description{
 This function uses the exteneded Euclidean algorithm to find the

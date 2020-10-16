@@ -17,7 +17,9 @@
 fft_polynomial_convolution = function(a, b, N) {
 
   c = fft_polynomial_multiplication(a, b)
-  c = polynomial_modulo(c, N)
+  dc = polynomial_degree(c)
+  if (dc >= N) c = polynomial_quotient(c, N)
+
   return(c)
 
 }

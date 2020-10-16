@@ -9,7 +9,7 @@
 polynomial_degree = function(a) {
 
   d = 0
-  if (sum(a) > 0) {
+  if (!zero_polynomial(a)) {
 
     d = max(which(a != 0)) - 1
 

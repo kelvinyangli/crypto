@@ -40,16 +40,25 @@ polynomial_gcd = function(a, b, p) {
   }
 
   repeat { # repeat until the remainder is 0
+  # while (!zero_polynomial(r)) {
 
     # remainder in modulo p
-    r = polynomial_long_division(r0, r1, p)$remainder %% p
+    res = polynomial_long_division(r0, r1, p)
+    r = res$remainder %% p
 
-    if (sum(r) == 0) break
+    if (zero_polynomial(r)) break
 
-    (r0 = r1)
-    (r1 = r)
+    r0 = r1
+    r1 = r
 
   }
+
+  r1 = omit_zero(r1)
+
+  # if the last non-zero remainder in the euclid's algorithm calculation
+  # is an integer, even if it is not 1, as long as it is coprime with p
+  # the gcd=1
+  if ((length(r1) == 1) && (coprime(r1, p))) r1 = 1
 
   return(r1)
 

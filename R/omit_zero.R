@@ -11,7 +11,7 @@
 omit_zero = function(a) {
 
   n = polynomial_degree(a) + 1
-  a = a[1:n]
+  if (n < length(a)) a = a[1:n]
   return(a)
 
 }

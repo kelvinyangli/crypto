@@ -25,6 +25,7 @@ fft_polynomial_multiplication = function(a, b) {
   c = round(fft(C, inverse = T))
   nc = na + nb - 1
   c = Re(c[1:nc])
+  c = omit_zero(c)
   return(c)
 
 }

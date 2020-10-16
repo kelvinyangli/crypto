@@ -7,10 +7,14 @@
 polynomial_modular_multiplicative_inverse(a, N, p)
 }
 \arguments{
-\item{a}{A polynomial represented by its coefficients that is
-coprime with x^N-1.}
+\item{a}{A polynomial represented by its coefficients. It should be
+coprime with the polynomial x^N-1. It's degree should be smaller than
+N. If not, a pre-processing step is neede before running this function.}
 
-\item{p}{An prime integer.}
+\item{N}{An integer for the degree of the modulus polynomial X^N-1.}
+
+\item{p}{An prime integer such that polynomial coefficients are
+taken from Z/pZ.}
 }
 \description{
 Given a polynomail from a polynomial quotient ring R_p=Z_p[x]/(x^N - 1),

@@ -2,29 +2,27 @@
 % Please edit documentation in R/polynomial_long_division.R
 \name{polynomial_long_division}
 \alias{polynomial_long_division}
-\title{Polynomial long division}
+\title{Polynomial long division in field}
 \usage{
-polynomial_long_division(a, b, p = NULL)
+polynomial_long_division(a, b, p)
 }
 \arguments{
 \item{a}{A vector of polynomial coefficients from the smallest to the
-largest term.}
+largest term. This is the divident in the long division.}
 
 \item{b}{A vector of polynomial coefficients from the smallest to
 the largest term. The polynomial has to be non-zero. It does not need
-to be monic.}
+to be monic. But it has to be smaller than a. This is the divisor.}
 
 \item{p}{An integer. The polynomial coefficients are taken from
 Z/pZ. If p is prime, integer coefficients of the quotient and
 remainder polynomials exist. Otherwise, integer coefficient may not
-exist. By default, it is NULL.}
+exist.}
 }
 \description{
-This function divides a polynomial by another using long division. It
-may not be efficient. The output is a list of quotient and remainder
-polynomials, stored in their coefficient formats. To ensure the
-quotient and remainder polynomials to have integer coefficients,
-modular arithmics are needed in the ring Z/pZ. If p is prime,
+Polynomial long division in Z/pZ. This is not the most efficient
+algorithm. The output is a list of quotient and remainder
+polynomials, stored in their coefficient formats. If p is prime,
 integer coefficients exist. Otherwise, integer coefficients may not
 exist.
 }
